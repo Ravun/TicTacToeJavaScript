@@ -3,6 +3,8 @@
 const player = document.querySelector('.Player');
 const reset = document.querySelector('.resetGame');
 const game = document.querySelectorAll('.gameBox'); //array
+const playerOneScore = document.querySelector('.scoreOne');
+const playerTwoScore = document.querySelector('.scoreTwo');
 
 // game conts
 
@@ -11,7 +13,15 @@ var player1 = prompt("player 1, what is your name?");
 const player1Upper = player1.charAt(0).toUpperCase() + player1.slice(1);
 var player2 = prompt("Player 2, what is your name?");
 const player2Upper = player2.charAt(0).toUpperCase() + player2.slice(1);
+
+
+// player score
+let scoreOne = 0;
+let scoreTwo = 0;
+playerOneScore.innerHTML = `${scoreOne} `;
+    playerTwoScore.innerHTML = ` ${scoreTwo}` ;
 // game var
+
 
 let gameisPlaying = true;
 let xIsNext = true;
@@ -28,13 +38,18 @@ const winnerOfGame = (letter) => {
 
   if (letter === 'X') {
     player.innerHTML = `${player1Upper} has won! `;
+    scoreOne++;
+    playerOneScore.innerHTML = `${scoreOne} `;
   } else {
     player.innerHTML = `${player2Upper} has won!`;
+    scoreTwo++;
+    playerTwoScore.innerHTML = ` ${scoreTwo}` ;
   }
 
 };
 
 const gameStatus = () => {
+
   const topLeft = game[0].classList[1]; // tells us if theres an x or o
   const topMiddle = game[1].classList[1];
   const topRight = game[2].classList[1];
@@ -109,6 +124,7 @@ const handleReset = () => {
 
 const handleGame = (e) => {
   const classList = e.target.classList;
+
 
 
   if (!gameisPlaying || classList[1] === 'X' || classList[1] === 'O') {
