@@ -1,0 +1,63 @@
+h1 {
+  text-align: center;
+}
+body{
+  display: flex;
+  justify-content: center;
+  background-color: #394867;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+td {
+  width: 100px;
+  height: 100px;
+}
+table {
+  margin: 5px auto;
+}
+
+.container{
+background: #9ba4b4;
+margin: 50px;
+padding: 50px;
+border-radius: 5%;
+}
+.statusGame {
+  font-size: 25px;
+  margin-bottom: 10%;
+  display: flex;
+  justify-content: space-around;
+
+}
+.resetGame{
+  cursor: pointer;
+}
+.resetGame:hover{
+  color: #f1f6f9;
+}
+.gameBoard{
+  color: #fff;
+
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+  background-color: #394867;
+
+}
+.gameBox{
+  cursor: pointer;
+  height: 200px;
+  width: 200px;
+  background: #9ba4b4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7rem;
+}
+.X::before{
+  content: 'X';
+  color: black;
+}
+.O::before{
+  content: 'O';
+}
