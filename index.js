@@ -8,7 +8,9 @@ const game = document.querySelectorAll('.gameBox'); //array
 
 // player names
 var player1 = prompt("player 1, what is your name?");
+const player1Upper = player1.charAt(0).toUpperCase() + player1.slice(1);
 var player2 = prompt("Player 2, what is your name?");
+const player2Upper = player2.charAt(0).toUpperCase() + player2.slice(1);
 // game var
 
 let gameisPlaying = true;
@@ -25,9 +27,9 @@ const winnerOfGame = (letter) => {
 
 
   if (letter === 'X') {
-    player.innerHTML = `${player1} has won! `;
+    player.innerHTML = `${player1Upper} has won! `;
   } else {
-    player.innerHTML = `${player2} has won!`;
+    player.innerHTML = `${player2Upper} has won!`;
   }
 
 };
@@ -62,7 +64,7 @@ const gameStatus = () => {
   } else if (topMiddle && topMiddle === middleMiddle && topMiddle === bottomMiddle) {
     winnerOfGame(topMiddle);
   } else if (topLeft && topLeft === middleLeft && topLeft === bottomLeft) {
-    winnerOfGame(topRight);
+    winnerOfGame(topLeft);
   }
 
   // check diagnals
@@ -83,11 +85,11 @@ const gameStatus = () => {
     xIsNext = !xIsNext;
       if (xIsNext)
       {
-          player.innerHTML = `${player1} is next`;
+          player.innerHTML = `${player1Upper} is next`;
         }
          else
          {
-            player.innerHTML = `${player2} is next`;
+            player.innerHTML = `${player2Upper} is next`;
          }
  }
 };
@@ -97,7 +99,7 @@ const gameStatus = () => {
 
 const handleReset = () => {
   xIsNext = true;
-  player.innerHTML = `${player1} is next`;
+  player.innerHTML = `${player1Upper} is next`;
   for (const gameB of game) {
     gameB.classList.remove('X');
     gameB.classList.remove('O');
