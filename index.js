@@ -2,6 +2,7 @@
 
 const player = document.querySelector('.Player');
 const reset = document.querySelector('.resetGame');
+const resetSco = document.querySelector('.resetScore');
 const game = document.querySelectorAll('.gameBox'); //array
 const playerOneScore = document.querySelector('.scoreOne');
 const playerTwoScore = document.querySelector('.scoreTwo');
@@ -111,7 +112,21 @@ const gameStatus = () => {
 
 
 // event handlers
-
+// reset score
+const resetS = () => {
+  scoreOne = 0;
+  scoreTwo = 0;
+  xIsNext = true;
+    playerOneScore.innerHTML = `${scoreOne} `;
+      playerTwoScore.innerHTML = `${scoreTwo} `;
+  player.innerHTML = `${player1Upper} is next`;
+  for (const gameB of game) {
+    gameB.classList.remove('X');
+    gameB.classList.remove('O');
+  }
+  gameisPlaying = true;
+};
+// reset game
 const handleReset = () => {
   xIsNext = true;
   player.innerHTML = `${player1Upper} is next`;
@@ -144,7 +159,7 @@ const handleGame = (e) => {
 
 
 // event listners
-
+resetSco.addEventListener('click', resetS);
 reset.addEventListener('click', handleReset);
 
 for (const gameB of game) {

@@ -35,8 +35,14 @@ table {
 .resetGame {
   cursor: pointer;
 }
+.resetScore{
+  cursor: pointer;
+}
 
 .resetGame:hover {
+  color: #f1f6f9;
+}
+.resetScore:hover{
   color: #f1f6f9;
 }
 
@@ -69,6 +75,7 @@ table {
   content: 'O';
 }
 
+/*  score bboards*/
 .score {
   width: 165px;
   height: 170px;
@@ -79,16 +86,17 @@ table {
   font-size: 7rem;
   background-color: #9ba4b4;
   border-radius: 100%;
+    position: absolute;
 }
 
 .scoreTwo {
-  position: absolute;
+
   left: 80%;
   top: 50%;
 }
 
 .scoreOne {
-  position: absolute;
+
   right: 80%;
   top: 50%;
 }
